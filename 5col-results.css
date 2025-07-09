@@ -120,6 +120,7 @@
 }
 .page-container {
   background-color: var(--w-s-color-background);
+  min-width: 100%;
   margin: 0rem;
   padding: 0rem;
   padding-left: 16px;
@@ -249,7 +250,7 @@
   max-height: calc(100vh - 5.6rem);
 }
 .max-w-\[70\%\] {
-  max-width: 70%;
+  max-width: 100%;
 }
 .min-h-\[120vh\] {
   min-height: 120vh;
@@ -474,8 +475,11 @@
   }
 }
 @media (min-width: 768px) {
+  .col-span-2 {
+    grid-column: span 4;
+  }
   .md\:col-span-2 {
-    grid-column: span 2 / span 2;
+    grid-column: span 4;
   }
   .md\:grid-cols-2 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1390,8 +1394,6 @@
 }
 [data-rsbs-overlay],
 [data-rsbs-root]:after {
-  max-width: auto;
-  max-width: var(--rsbs-max-w, auto);
   margin-left: env(safe-area-inset-left);
   margin-left: var(--rsbs-ml, env(safe-area-inset-left));
   margin-right: env(safe-area-inset-right);
